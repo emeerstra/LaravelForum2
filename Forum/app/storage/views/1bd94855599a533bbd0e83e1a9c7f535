@@ -1,0 +1,16 @@
+
+<?php $__env->startSection('forumContents'); ?>
+	<div class="span9">
+		<?php echo $__env->yieldContent('content2'); ?>		
+	</div>
+	<div class="span3">
+		<?php echo $__env->yieldContent('content3'); ?>
+		<div class="span12">
+			<?php echo $__env->yieldContent('content4'); ?>
+		</div>
+	</div>
+	<div class="span9">
+		<?php echo $__env->yieldContent('content2'); ?>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.laravelForumLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

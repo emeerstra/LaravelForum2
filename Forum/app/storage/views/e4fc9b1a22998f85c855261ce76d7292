@@ -1,0 +1,55 @@
+
+	<?php echo $__env->make('include/forumDBConnect', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<?php
+	/*
+	if(isset($_SESSION['CurrentCatID'])) $_SESSION['CurrentCatID'] = null;
+	if(isset($_SESSION['CurrentCatTitle'])) $_SESSION['CurrentCatTitle'] = null;
+	if(isset($_SESSION['CurrentSubCatID'])) $_SESSION['CurrentSubCatID'] = null;
+	if(isset($_SESSION['CurrentSubCatTitle'])) $_SESSION['CurrentSubCatTitle'] = null;
+	*/
+	?>
+
+
+<?php $__env->startSection('content'); ?>
+	<div class="container-fluid">
+		<div class="span9">
+			<div class="tableHeaderRow">
+				<h4> <?php echo $category; ?></h4>
+				</div>
+			<div class="allTableRows">
+			
+				<?php foreach($subcategories as $subcategory): ?>
+					<div class="tableRow">
+						<div class="tableContentRow">
+							<div class="tableContent">
+								<form action ="forumSubCategory.php" method="POST">
+									<?php /* <input type="hidden" name="CatID" value="' . $row['CatID'] . '">
+									<input type="hidden" name="CatTitle" value="' .$row['CatTitle'] . '"> */ ?>
+									<button><h5><?php echo $subcategory->subcatTitle; ?></h5></button>
+								</form>
+								<p class="content"><?php echo $subcategory->subcatDescription; ?></p>
+							</div>
+						</div>
+						<div class="tableInfoRow">
+							<div class="tableContent">
+								<p class="infoContent"> Posts:<?php echo $subcategory->subcatTotalPosts; ?></p>
+							</div>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+			<div class="span3">
+				<?php 
+					//include 'Queries/forumUserQuery.php';
+				?>
+				<div class="span12">
+				<?php 
+					//include 'Queries/forumRecentPostQuery.php';
+				?>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

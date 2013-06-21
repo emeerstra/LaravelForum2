@@ -1,0 +1,9 @@
+
+<?php $__env->startSection('content'); ?>
+	<div class="container-fluid">
+		<h4>Now I am on the About Page</h4>
+		<br>
+		<p>Theres nothing here yet?</p>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

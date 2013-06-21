@@ -1,0 +1,37 @@
+<?php $__env->startSection('content'); ?>
+	<div class="container-fluid">
+		<div class="row-fluid">		
+			<?php if ( $errors->count() > 0 ): ?>
+    		  <p>The following errors have occurred:</p>
+      			<ul>
+        			<?php foreach( $errors->all() as $message ): ?>
+          				<li><?php echo $message; ?></li>
+        			<?php endforeach; ?>
+      			</ul>
+    		<?php endif; ?>
+		</div>
+		<div class="row-fluid">
+			<div class="span9">
+				<form class="form-horizontal" action="../posts" method="POST" >
+					<fieldset> 
+						<legend>Create Post</legend>
+						<div class="control-group">
+							<label class="control-label" for="post">Post Content</label>
+							<div class="controls">
+								<textarea class="input-xlarge xxlarge" id="post" rows="8" name="inputPostContent" > </textarea>
+							</div>
+						</div>
+						<div class="form-actions">
+							<button type"submit" class="btn"> Post </button>
+						</div>
+					</fieldset>
+				</form>
+				<div class="span3">
+				
+				</div>
+			</div>
+		</div>
+   </div>
+	
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

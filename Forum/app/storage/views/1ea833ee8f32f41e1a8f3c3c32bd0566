@@ -1,0 +1,3 @@
+<?php $__env->startSection('content3'); ?>
+	<p>Im am in this funny view </p>
+<?php $__env->stopSection(); ?>

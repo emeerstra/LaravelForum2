@@ -1,0 +1,25 @@
+	<?php
+	//include 'include/forumSession.php';
+	//include 'include/forumHeader.php';
+	?>
+	<?php echo $__env->make('../include/forumDBConnect', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<?php
+	/*
+	if(isset($_SESSION['CurrentCatID'])) $_SESSION['CurrentCatID'] = null;
+	if(isset($_SESSION['CurrentCatTitle'])) $_SESSION['CurrentCatTitle'] = null;
+	if(isset($_SESSION['CurrentSubCatID'])) $_SESSION['CurrentSubCatID'] = null;
+	if(isset($_SESSION['CurrentSubCatTitle'])) $_SESSION['CurrentSubCatTitle'] = null;
+	*/
+	?>
+
+
+<?php $__env->startSection('content'); ?>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<p>Im in the default forum layout blade</p>
+			
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

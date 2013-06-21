@@ -1,0 +1,54 @@
+@section('content4')
+@include('../include/forumDBConnect')
+
+<?php
+	$sql2="SELECT u.UserName, c.CatTitle, s.SubCatTitle
+		FROM users u, categories c, posts p, subcategories s
+		WHERE u.userID = p.UserID AND p.CatID = c.CatID  AND s.SubCatID = p.SubCatID
+		ORDER by p.PostDate DESC
+		LIMIT 0,5";
+	$sql = "SELECT * FROM `posts` ORDER BY PostDate DESC LIMIT 0, 5";
+
+	$result1 = mysql_query($sql2);
+	
+	if(!$result1) { 
+		echo 'No display for you'; 
+	}
+	else {
+		if(mysql_num_rows($result1)==0){
+			echo 'No rows yet';
+		}
+		else {
+			echo 
+				'<div class="recentPostHeader">
+					<h4>User: Recent Posts</h4>
+				</div>
+				<div class="recentPostAllRows ">
+				';
+			while($row = mysql_fetch_assoc($result1))
+			{
+				
+				echo '
+					
+						<div class="recentPostContainer">
+							<div class="recentPostRow">
+								<p>'. $row['CatTitle'] . ' <br>  --> ' . $row['SubCatTitle'] . '</p>
+								<p> By: '. $row['UserName'] . '</p>
+							</div>
+						</div>	
+					
+					
+					
+					';
+			}
+			echo '
+				</div>
+			<div class="recentPostEndRow">
+					
+			</div>
+			';
+		}
+		
+	}
+?>
+@stop

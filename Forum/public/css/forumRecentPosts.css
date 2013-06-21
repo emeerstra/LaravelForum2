@@ -1,0 +1,50 @@
+.recentPostHeader {
+	height: 30px;
+	margin-top: 10px;
+	background-color: #cccccc;
+	border: 1px solid #555555;
+	vertical-align: middle;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	box-sizing: border-box;
+}
+
+.recentPostHeader h4 {
+	margin: 5px 0px 0px 5px;
+	color: black;
+	font-size: 15px;
+	font-weight: none;
+}
+	
+.recentPostAllRows {
+	background-color: #eeeeee;
+	min-height: 40px;
+}
+.recentPostAllRows:nth-child(2){
+	background-color: yellow;
+}
+.recentPostContainer{
+	
+}
+
+
+.recentPostRow{
+
+	padding: 5px 0px 5px 15px;
+	background-color: #fafafa;
+	border-bottom: 1px solid black;
+}
+	.recentPostRowContent{
+	
+	}
+	
+.recentPostEndRow{
+	height: 10px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background-color: #cccccc;
+}
+
+.container-fluid .span12 {
+	margin-left: 0px;
+}

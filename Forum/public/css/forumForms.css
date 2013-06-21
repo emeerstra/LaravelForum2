@@ -1,0 +1,25 @@
+/*This page provides all the styles for the forms on my website. This includes signing up, creating
+categories, topics, and posts. */
+
+
+/* This is the forms on the Create Sub Category page */
+	.form-horizontal .form-actions {
+		padding-left: 395px;
+	}
+	
+	.xxlarge{
+		width: 470px;
+	}
+	.xxxlarge{
+		width: 650px;
+	}
+	
+.container-fluid .form-horizontal >fieldset {
+	margin-top: 15px;
+}
+
+.quickReplySubmitBtn{
+	float:right;
+	margin-right: 70px;
+	margin-top: 20px;
+}

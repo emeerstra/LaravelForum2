@@ -1,0 +1,39 @@
+
+<?php $__env->startSection('content'); ?>
+	<div class="container-fluid">
+		<div class="span9">
+			<div class="tableHeaderRow">
+				<h4> <?php echo $category->catTitle; ?></h4>
+			</div>
+			<div class="allTableRows">
+			
+				<?php foreach($subcategoriesArray as $subcategory): ?>
+					<div class="tableRow">
+						<div class="tableContentRow">
+							<div class="tableContent">
+								<a class="" href="/forum/<?php echo $category->id; ?>/<?php echo $subcategory->id; ?>" > <h5><?php echo $subcategory->subcatTitle; ?> </h5> </a>
+								<p class="content"><?php echo $subcategory->subcatDescription; ?></p>
+							</div>
+						</div>
+						<div class="tableInfoRow">
+							<div class="tableContent">
+								<p class="infoContent"> Posts:<?php echo $subcategory->subcatTotalPosts; ?></p>
+							</div>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+			<div class="span3">
+				<?php 
+					//include 'Queries/forumUserQuery.php';
+				?>
+				<div class="span12">
+				<?php 
+					//include 'Queries/forumRecentPostQuery.php';
+				?>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

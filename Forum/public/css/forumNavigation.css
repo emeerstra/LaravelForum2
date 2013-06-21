@@ -1,0 +1,228 @@
+body{
+	/*padding-top: 47px;*/
+}
+
+/*-------------------TOP NAV BAR WITH SIGNIN-----------------*/ 
+/* This is classes needed for the Sign in bar at the top */
+	.topnavbar {
+		background-color: black;
+	}
+
+	.topnavbar .navbar-inner {
+		background-image: none;
+		border: none;
+		background-color: black;
+	}
+	
+	.topnavbar .container {
+		min-height: 40px;
+	}
+		/*Equivalent of ul class="nav" from bootstrap. Note the margin 10 here in the UL. 
+		Makes all the elements 10 px from the top */
+		.topnav {
+			position: relative;
+			float: right;
+			margin: 0px 10px 0px 0px;
+
+		}
+
+		.topnav  > li {
+			list-style: none;
+			display: inline;
+		}
+	
+	
+		/*Next are need to create the form at the top, adding the form means style changes*/	
+			.topnavbar .formClass {
+				margin: 0px;
+				display: inline;
+			}
+			.topnavbar .topnav  form > li {
+				list-style: none;
+				display: inline;
+			}
+
+			.topnavbar .topnav  > form > li  > input {
+				margin: 5px 0px 5px 0px;
+				height: 20px;
+				padding: 5px;
+			}
+
+		/*--------End of those -------*/
+	
+	.topnavbar .btn {
+		background-color: #5bb75b;
+		color: white;
+		text-shadow: none;
+		background-image: none;
+		border: none;
+		padding: 5px 10px 5px 10px;
+		margin: 0px 0px 0px 0px;
+	}
+	.topnavbar .btn:hover {
+		background-color: #338f33
+	}
+	
+	.topnavbar .margin-top{
+		margin-top: 4px;
+	}
+	
+.textNav{
+	display: inline-block;
+	background-color: white;
+	border-radius: 4px;
+	padding: 5px 10px 5px 10px;
+	vertical-align: middle;
+}
+	
+/*-------------------END OF TOP SIGN IN BAR-----------------*/
+
+
+/*Next classes are for the banner that sits below the login nav bar. */
+	.banner {
+		width: 100%;
+		background-color: #0066cc;
+		height: 90px;
+	}
+	.banner .container {
+		width: 1000px;
+		padding-right: 20px;
+		padding-left: 20px;
+
+	}
+
+	
+/*End of banner classes*/
+
+/*-----------NAVIGATION BAR---------------------*/
+/*--This bar sits below the banner in the site--*/
+	.navbar .container {
+		width: 1000px;
+		min-height: 40px;
+	}
+	
+	.navbar {
+		margin-bottom: 0px;
+	}
+
+	.navbar .navbar-inner{
+		background-image: none;
+		border: none;
+		background-color: #dedede;
+	}
+
+	.navbar .nav > li > a {
+		text-shadow: none;
+	}
+	
+	.navbar .nav .btn {
+		font-size: 18px;
+		font-weight: bold;
+		padding: 5px 15px;
+		margin: 5px 5px 10px 5px;
+		background-image: none;
+		box-shadow: 3px 4px 8px 0px black;
+	}
+	
+	.navbar .nav .btn:hover {
+		background-color: #ececec;
+		box-shadow: inset 2px 2px 8px -1px black;
+		padding: 7px 15px;
+	}
+
+	.navbar .nav .active > .btn,
+	.navbar .nav .active > .btn:hover,
+	.navbar .nav .active > .btn:focus {
+		background-color: #ececec;
+		box-shadow: inset 2px 2px 8px -1px black;
+		padding: 7px 15px;
+	}
+	.navbar .nav .formClass {
+				margin: 0px;
+				display: list-item;
+				float: left;
+			}
+
+/*---------End of navigation bar----------------*/
+
+/*-----------Start of breadcrumb navigation -----------*/
+.container {
+	width: 1040px;
+}
+
+.breadcrumb {
+    margin: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px;
+	background-color: #f2f2f2;
+}
+	.breadcrumb .row-fluid {
+		width: 1000px;
+		background-color: white;
+		padding-right: 20px;
+		padding-left: 20px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+
+	.breadcrumb .span12{
+		min-height: 10px;
+	}
+
+	.breadcrumb .ulbreadcrumb{
+		margin: 0px;
+		background-color: white;
+		padding: 5px 5px 0px 5px;
+		list-style: none;
+	}
+	.breadcrumb .ulbreadcrumb > li{
+		display: list-item;
+		float: left;
+	}
+
+/* These are mostly attributes that are overwritten for my navigation to work. 
+.navbar {
+	margin-bottom: 0px;
+}
+
+.navbar .nav  {
+	
+}
+
+.navbar .navbar-inner{
+	background-image: none;
+	border: none;
+	background-color: #000000;
+}
+
+.navbar .btn-navbar {
+	background-color: #5bb75b;
+	background-image: none;
+	margin-bottom: 5px;
+}
+
+.navbar .nav > li > a {
+	display: block;
+	text-shadow: none;
+	color: white;
+	padding: 5px 10px 5px 10px;
+	margin-top: 5px;
+}
+
+.navbar .nav .btn-navbar:hover {
+	color: white;
+	background-color: #338f33
+}
+
+.navbar .nav > li > input {
+	margin-top: 5px;
+	margin-left: 5px;
+	height: 22px;
+}
+
+
+ End of navigation changes */
+
+

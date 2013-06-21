@@ -1,0 +1,95 @@
+<body>
+	<div class = "topnavbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="topnav pull-right" >
+
+						<?php if (Auth::check()): ?>
+							<li><div class="textNav margin-top">
+								Logged in as <?php echo Auth::user()->username; ?>
+							</div></li>
+
+							<li><a class="btn margin-top" href="/userlogout">Log out</a></li>
+							<li><a class="btn margin-top" href ="/users/<?php echo Auth::user()->id; ?>/edit" >
+								<img src="/images/glyphicons/cogwhite2.png" height="20px" width="20px" >
+							</a></li>
+							
+						
+
+						<?php else: ?>
+						
+							<?php if (Session::has('flash_error')): ?>
+								<li><div class="textNav" style="background-color: red;">
+									<div id ="flash_error"><?php echo Session::get('flash_error'); ?> </div>
+								</div></li>
+							
+							<?php endif; ?>
+						
+							<form class="formClass" method="POST" action="/userlogin">
+								<li><input type="text" class="input-medium" name="inputUsername" id="inputUserName" placeholder="Username" /></li>
+								<li><input type="password" class="input-medium" name ="inputPassword" id="inputUserPassword" placeholder="Password" /></li>
+								<li><button  class="btn"><i class="icon-user icon-white"></i>Log In</button></li>
+							</form>
+							<li><a class="btn" href="/users/create"><i class="icon-plus-sign icon-white"></i> Sign Up</a></li>
+						
+						<?php endif; ?>
+					
+						
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="banner">
+		<div class="container">
+			<img src="/images/dwlogo.png" style="height:90px;" />
+		</div>
+	</div>
+	
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+
+					<?php if(!isset($navChoice)): ?>
+						<?php $navChoice=0; ?>
+					<?php endif; ?>
+					
+					<?php echo ($navChoice == 0 ? '<li class="active">' : '<li>'); ?>
+						<a class="btn" href="/categories"> Home </a> 
+					</li>
+
+					<?php echo ($navChoice == 1 ? '<li class="active">' : '<li>'); ?>
+						<a class="btn" href="/about"> About </a> 
+					</li>
+					<?php echo ($navChoice == 2 ? '<li class="active">' : '<li>'); ?>
+						<a class="btn" href="/contact"> Contact </a> 
+					</li>
+					<?php echo ($navChoice == 3 ? '<li class="active">' : '<li>'); ?>
+						<a class="btn" href="/sources"> Sources </a> 
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<?php
+	/*<!-- <div class="container breadcrumb">
+		<div class="row-fluid">
+			<div class="span12">
+					<ul class="nav ulbreadcrumb">
+						<li><a href="/categories">Forum  </a> </li>
+						<?php if($breadcrumb > 0): ?> 
+								<li><p> > <a href= "/categories/<?php echo $category->id; ?>/subcategories"><?php echo $category-> catTitle; ?> </a>
+								
+								<?php if($breadcrumb > 1 ): ?> 
+								</li></p><li><p> > <a href="/categories/<?php echo $category->id; ?>/subcategories/<?php echo $subcategory->id; ?>/posts" ><?php echo $subcategory -> subcatTitle; ?></a> 
+								<?php endif; ?>
+									
+								</p></li>
+						<?php endif; ?>
+						
+					</ul>
+			</div>
+		</div>
+	</div> -->*/
+	?>

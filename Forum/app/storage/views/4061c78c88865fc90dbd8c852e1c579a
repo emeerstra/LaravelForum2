@@ -1,0 +1,77 @@
+<body>
+	<div class = "topnavbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="topnav pull-right" >
+					<?php
+						if(isset($_SESSION['signed_in']) && $_SESSION['signed_in']==true)
+						{ ?>
+							<li><div class="signedInUser margin-top">
+								Signed in as: <span style="font-weight: bold;"><?php echo $_SESSION['UserName']; ?></span>
+							</div></li>
+							<form class="formClass" method="POST" action="actionPages/forumSignOut.php">
+								<li><button class="btn margin-top" type="submit" >Sign Out</button></li>
+								<li><button class="btn margin-top" type="submit" ><img src="images/glyphicons/cogwhite2.png" height="20px" width="20px" > </button></li>
+							</form>
+							
+							
+						<?php }
+						else { ?>
+						<form class="formClass" method="POST" action="actionPages/forumSignIn.php">
+							<li><input type="text" class="input-medium" name="inputUserName" id="inputUserName" placeholder="Username" /></li>
+							<li><input type="password" class="input-medium" name ="inputUserPassword" id="inputUserPassword" placeholder="Password" /></li>
+							<li><button type="submit" class="btn"><i class="icon-user icon-white"></i>Sign In</button></li>
+						</form>
+						<li><a class="btn" href="#Sign-up"><i class="icon-plus-sign icon-white"></i> Sign Up</a></li>
+						<?php }
+					?>
+					
+						
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="banner">
+		<div class="container">
+			<img src="images/dwlogo.png" style="height:90px;" />
+		</div>
+	</div>
+	
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+					<?php if(!isset($_SESSION['navChoice'])){
+							$_SESSION['navChoice'] = 0;
+						}
+					?>
+					<form class="formClass" action="/" >
+						<?php //echo ($data['navChoice'] == 0 ? '<li class="active">' : '<li>'); ?>
+							<button class="btn" name="homeButton" id="homeButton" >Home</button></li>
+							<?php echo $data['navChoice']; ?>
+					</form>
+					<form class="formClass" action="/about">
+						<?php echo (isset($_SESSION['navChoice']) && $_SESSION['navChoice'] == 1 ? '<li class="active">' : '<li>'); ?>
+							<button class="btn" type="submit" name="aboutButton" id="aboutButton" >About</button></li>
+					</form>
+					<form class="formClass" action="/contact" >
+						<?php echo (isset($_SESSION['navChoice']) && $_SESSION['navChoice'] == 2 ? '<li class="active">' : '<li>'); ?>
+							<button class="btn" type="submit" name="contactButton" id="contactButton">Contact</button></li>
+					</form>
+					<form class="formClass" action="actionPages/forumNavSelection.php" method="POST" >
+						<?php echo (isset($_SESSION['navChoice']) && $_SESSION['navChoice'] == 3 ? '<li class="active">' : '<li>'); ?>
+							<button class="btn" type="submit" name="sourceButton" id="sourceButton">Sources</button</li>
+					</form>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		function navClick(elementID)
+		{
+
+			var element = document.getElementById(elementID);
+			element.style.class ="active";
+		}
+	</script>
